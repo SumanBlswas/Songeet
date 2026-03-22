@@ -1,0 +1,11 @@
+# Exclude the heavy local build artifacts
+node_modules/
+.expo/
+android/app/build/
+android/.cxx/
+android/.gradle/
+ios/build/
+
+# Exclude existing installers
+*.apk
+*.aab

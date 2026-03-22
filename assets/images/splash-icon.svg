@@ -1,0 +1,246 @@
+<svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Holographic gradient -->
+    <linearGradient id="holographic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff87"/>
+      <stop offset="25%" style="stop-color:#60efff"/>
+      <stop offset="50%" style="stop-color:#ff0080"/>
+      <stop offset="75%" style="stop-color:#ffaa00"/>
+      <stop offset="100%" style="stop-color:#8000ff"/>
+    </linearGradient>
+    
+    <!-- Radial background gradient -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1a0033"/>
+      <stop offset="50%" style="stop-color:#000000"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </radialGradient>
+    
+    <!-- Massive neon glow -->
+    <filter id="massiveGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="25" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Liquid metal effect -->
+    <filter id="liquidMetal" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+      <feOffset dx="5" dy="5" result="offset"/>
+      <feFlood flood-color="#00ffff" flood-opacity="0.8"/>
+      <feComposite in="offset" in2="SourceGraphic" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Animated full-screen shimmer -->
+    <linearGradient id="screenShimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0)"/>
+      <stop offset="30%" style="stop-color:rgba(0,255,255,0.3)"/>
+      <stop offset="50%" style="stop-color:rgba(255,255,255,0.6)"/>
+      <stop offset="70%" style="stop-color:rgba(255,0,128,0.3)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-200 -200;1200 2000;-200 -200" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <!-- Pulsing glow -->
+    <filter id="pulse" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+      <animate attributeName="stdDeviation" values="15;35;15" dur="2s" repeatCount="indefinite"/>
+    </filter>
+  </defs>
+  
+  <!-- Full screen dark background -->
+  <rect width="1080" height="1920" fill="url(#bgGradient)"/>
+  
+  <!-- Shooting stars behind logo -->
+  <g opacity="0.8">
+    <!-- Star 1 -->
+    <g>
+      <line x1="-50" y1="100" x2="100" y2="200" stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="x1" values="-50;200;450" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="100;150;200" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="100;350;600" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="200;250;300" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="100" cy="200" r="3" fill="#ffffff">
+        <animate attributeName="cx" values="100;350;600" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="200;250;300" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Star 2 -->
+    <g>
+      <line x1="1000" y1="80" x2="850" y2="230" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round">
+        <animate attributeName="x1" values="1000;750;500" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="y1" values="80;180;280" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="x2" values="850;600;350" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="y2" values="230;330;430" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </line>
+      <circle cx="850" cy="230" r="2" fill="#ffffff">
+        <animate attributeName="cx" values="850;600;350" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="cy" values="230;330;430" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+    </g>
+    
+    <!-- Star 3 -->
+    <g>
+      <line x1="50" y1="1400" x2="250" y2="1200" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
+        <animate attributeName="x1" values="50;300;550" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="y1" values="1400;1300;1200" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="x2" values="250;500;750" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="y2" values="1200;1100;1000" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+      </line>
+      <circle cx="250" cy="1200" r="4" fill="#ffffff">
+        <animate attributeName="cx" values="250;500;750" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="cy" values="1200;1100;1000" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+    </g>
+    
+    <!-- Star 4 -->
+    <g>
+      <line x1="1080" y1="1500" x2="880" y2="1350" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round">
+        <animate attributeName="x1" values="1080;830;580" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+        <animate attributeName="y1" values="1500;1400;1300" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+        <animate attributeName="x2" values="880;630;380" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+        <animate attributeName="y2" values="1350;1250;1150" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+      </line>
+      <circle cx="880" cy="1350" r="3" fill="#ffffff">
+        <animate attributeName="cx" values="880;630;380" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+        <animate attributeName="cy" values="1350;1250;1150" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="1.5s"/>
+      </circle>
+    </g>
+    
+    <!-- Star 5 -->
+    <g>
+      <line x1="-30" y1="900" x2="180" y2="750" stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+        <animate attributeName="x1" values="-30;220;470" dur="4s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="y1" values="900;825;750" dur="4s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="x2" values="180;430;680" dur="4s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="y2" values="750;675;600" dur="4s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="2s"/>
+      </line>
+      <circle cx="180" cy="750" r="3" fill="#ffffff">
+        <animate attributeName="cx" values="180;430;680" dur="4s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="cy" values="750;675;600" dur="4s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Massive liquid S shape - centered and scaled up -->
+  <g transform="translate(540, 800)">
+    <path d="M 0 -400
+             Q -200 -450 -320 -350
+             Q -440 -250 -400 -100
+             Q -360 50 -150 100
+             Q 60 150 150 50
+             Q 240 -50 200 -200
+             Q 160 -350 0 -400
+             
+             M 0 400
+             Q 200 450 320 350
+             Q 440 250 400 100
+             Q 360 -50 150 -100
+             Q -60 -150 -150 -50
+             Q -240 50 -200 200
+             Q -160 350 0 400
+             
+             M -150 100
+             Q 0 50 150 100
+             Q 300 150 350 250
+             Q 300 350 150 300
+             Q 0 250 -150 300
+             Q -300 250 -350 150
+             Q -300 50 -150 100
+             
+             M 150 -100
+             Q 0 -50 -150 -100
+             Q -300 -150 -350 -250
+             Q -300 -350 -150 -300
+             Q 0 -250 150 -300
+             Q 300 -250 350 -150
+             Q 300 -50 150 -100"
+          fill="url(#holographic)"
+          filter="url(#massiveGlow)"
+          opacity="0.95"/>
+    
+    <!-- Crystalline structure overlay -->
+    <g fill="none" stroke="url(#holographic)" stroke-width="8" filter="url(#liquidMetal)" opacity="0.8">
+      <!-- Top crystal -->
+      <polygon points="0,-400 -200,-300 -320,-100 -150,0 60,0 150,-100 200,-300"/>
+      <!-- Bottom crystal -->
+      <polygon points="0,400 200,300 320,100 150,0 -60,0 -150,100 -200,300"/>
+      <!-- Connecting energy lines -->
+      <line x1="-150" y1="0" x2="150" y2="0"/>
+      <line x1="0" y1="-200" x2="0" y2="200"/>
+      <line x1="-320" y1="-100" x2="320" y2="100"/>
+      <line x1="-320" y1="100" x2="320" y2="-100"/>
+    </g>
+    
+    <!-- Pulsing core -->
+    <circle cx="0" cy="0" r="30" fill="#00ffff" filter="url(#pulse)" opacity="0.9"/>
+  </g>
+  
+  <!-- Floating energy particles scattered across screen -->
+  <g fill="#00ffff" opacity="0.7">
+    <circle cx="200" cy="400" r="8">
+      <animate attributeName="cy" values="400;300;400" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="880" cy="600" r="6">
+      <animate attributeName="cy" values="600;700;600" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="1200" r="10">
+      <animate attributeName="cy" values="1200;1100;1200" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="1400" r="7">
+      <animate attributeName="cy" values="1400;1500;1400" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="800" r="5">
+      <animate attributeName="cy" values="800;750;800" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="1000" r="9">
+      <animate attributeName="cy" values="1000;1050;1000" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Cyberpunk scan lines -->
+  <g stroke="#ff0080" stroke-width="2" opacity="0.4">
+    <line x1="0" y1="300" x2="1080" y2="300">
+      <animate attributeName="opacity" values="0;0.6;0" dur="0.2s" repeatCount="indefinite" begin="0s"/>
+    </line>
+    <line x1="0" y1="800" x2="1080" y2="800">
+      <animate attributeName="opacity" values="0;0.6;0" dur="0.25s" repeatCount="indefinite" begin="1s"/>
+    </line>
+    <line x1="0" y1="1400" x2="1080" y2="1400">
+      <animate attributeName="opacity" values="0;0.6;0" dur="0.15s" repeatCount="indefinite" begin="2s"/>
+    </line>
+  </g>
+  
+  <!-- Full screen holographic overlay -->
+  <rect width="1080" height="1920" fill="url(#screenShimmer)" opacity="0.2"/>
+  
+
+</svg>
